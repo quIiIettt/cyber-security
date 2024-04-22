@@ -1,12 +1,12 @@
 import hashlib
 
-def sha3_224_hash(data):
-    hash_object = hashlib.sha3_224(data.encode())
+def sha3_256_hash(data):
+    hash_object = hashlib.sha3_256(data.encode())
     hex_dig = hash_object.hexdigest()
     return hex_dig
 
 def verify_digest(message, stored_hash):
-    hashed_message = sha3_224_hash(message)
+    hashed_message = sha3_256_hash(message)
     if hashed_message == stored_hash:
         return f"Дайджест співпадає зі збереженим. Повідомлення: {message}"
     else:
